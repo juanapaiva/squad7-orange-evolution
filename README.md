@@ -1,0 +1,1 @@
+# squad7-frontend
