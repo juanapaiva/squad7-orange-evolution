@@ -58,7 +58,25 @@ header {
   color: #0F0F0F;   
 }
 
-.btn {
+
+.subtitle-dark {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #0F0F0F;  
+}
+
+.small-copy {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  
+}
+
+.btn-evolution-text {
   font-family: 'Metropolis';
   font-style: normal;
   font-weight: 700;
@@ -71,19 +89,10 @@ header {
   
 }
 
-
-
-.subtitle-dark {
-  font-family: 'Metropolis';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 120%;
-  color: #0F0F0F;  
+.img-logo{
+  height: 64px;
 }
 
-.img-logo {
-}
 
 .tag-dark {
 
