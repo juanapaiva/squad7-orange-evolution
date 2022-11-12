@@ -6,11 +6,16 @@ import java.util.Optional;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Service;
 
 import com.api.orangeevolution.entities.User;
 import com.api.orangeevolution.repositories.UserRepository;
+import com.api.orangeevolution.services.exceptions.DatabaseException;
 import com.api.orangeevolution.services.exceptions.ResourceNotFoundException;
 
+@Service
 public class UserService {
 
 	@Autowired
@@ -20,7 +25,7 @@ public class UserService {
 		return repo.save(user);
 	}
 
-	public List<User> read() {
+	public List<User> readAll() {
 		return repo.findAll();
 	}
 	
@@ -44,5 +49,15 @@ public class UserService {
 		user.setEmail(newUser.getEmail());
 		user.setPassword(newUser.getPassword());
 		user.setPhoto(newUser.getPhoto());
+	}
+	
+	public void delete(Integer id) {
+		try {
+			repo.deleteById(id);
+		} catch (EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException(id);
+		} catch (DataIntegrityViolationException e) {
+			throw new DatabaseException(e.getMessage());
+		}
 	}
 }

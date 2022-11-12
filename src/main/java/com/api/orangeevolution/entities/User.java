@@ -3,12 +3,14 @@ package com.api.orangeevolution.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "Users")
+@Entity
+@Table(name = "tb_users")
 public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
