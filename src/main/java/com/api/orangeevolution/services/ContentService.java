@@ -51,7 +51,7 @@ public class ContentService {
 		content.setType(newContent.getType());
 		content.setOwner(newContent.getOwner());
 		content.setDuration(newContent.getDuration());
-		content.setStatus(newContent.getStatus());
+		content.setContentStatus(newContent.getStatus());
 		content.setLink(newContent.getLink());
 	}
 	

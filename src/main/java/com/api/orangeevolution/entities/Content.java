@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.api.orangeevolution.entities.enums.ContentStatus;
+
 @Entity
 @Table(name = "tb_contents")
 public class Content implements Serializable {
@@ -26,7 +28,7 @@ public class Content implements Serializable {
 	private String type;
 	private String owner;
 	private String duration;
-	private String status;
+	private Integer status;
 	private String link;
 	
 	@ManyToOne
@@ -36,7 +38,7 @@ public class Content implements Serializable {
 	public Content() {}
 
 	public Content(Integer id, String category, String subject, String title, String type, String owner, String duration,
-			String status, String link, Roadmap roadmap) {
+			ContentStatus status, String link, Roadmap roadmap) {
 		super();
 		this.id = id;
 		this.category = category;
@@ -45,7 +47,7 @@ public class Content implements Serializable {
 		this.type = type;
 		this.owner = owner;
 		this.duration = duration;
-		this.status = status;
+		setContentStatus(status);
 		this.link = link;
 		this.roadmap = roadmap;
 	}
@@ -106,12 +108,14 @@ public class Content implements Serializable {
 		this.duration = duration;
 	}
 
-	public String getStatus() {
-		return status;
+	public ContentStatus getStatus() {
+		return ContentStatus.valueOf(status);
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setContentStatus(ContentStatus status) {
+		if (status != null) {
+			this.status = status.getId();
+		}
 	}
 
 	public String getLink() {
