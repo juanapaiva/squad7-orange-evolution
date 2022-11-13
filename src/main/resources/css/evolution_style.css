@@ -1,6 +1,6 @@
 @font-face{
   font-family: "Metropolis";
-  src: url(../../font/metropolis.regular.woff);
+  src: url(../font/metropolis.regular.woff);
 }
 body {
   background: #0F0F0F;
