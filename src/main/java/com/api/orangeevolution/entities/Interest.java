@@ -1,13 +1,18 @@
 package com.api.orangeevolution.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_interests")
@@ -19,6 +24,10 @@ public class Interest implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String stack;
+
+	@JsonIgnore
+	@ManyToMany
+	private List<User> users = new ArrayList<>();
 	
 	public Interest() {}
 
@@ -42,6 +51,10 @@ public class Interest implements Serializable {
 
 	public void setStack(String stack) {
 		this.stack = stack;
+	}
+
+	public List<User> getUsers() {
+		return users;
 	}
 
 	@Override

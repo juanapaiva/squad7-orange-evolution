@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,12 +28,15 @@ public class Content implements Serializable {
 	private String duration;
 	private String status;
 	private String link;
-	private Integer id_roadmap;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_roadmap")
+	private Roadmap roadmap;
 	
 	public Content() {}
 
 	public Content(Integer id, String category, String subject, String title, String type, String owner, String duration,
-			String status, String link, Integer id_roadmap) {
+			String status, String link, Roadmap roadmap) {
 		super();
 		this.id = id;
 		this.category = category;
@@ -42,7 +47,7 @@ public class Content implements Serializable {
 		this.duration = duration;
 		this.status = status;
 		this.link = link;
-		this.id_roadmap = id_roadmap;
+		this.roadmap = roadmap;
 	}
 
 	public Integer getId() {
@@ -117,17 +122,17 @@ public class Content implements Serializable {
 		this.link = link;
 	}
 
-	public Integer getId_roadmap() {
-		return id_roadmap;
+	public Roadmap getRoadmap() {
+		return roadmap;
 	}
 
-	public void setId_roadmap(Integer id_roadmap) {
-		this.id_roadmap = id_roadmap;
+	public void setRoadmap(Roadmap roadmap) {
+		this.roadmap = roadmap;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, id_roadmap);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -139,6 +144,6 @@ public class Content implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Content other = (Content) obj;
-		return Objects.equals(id, other.id) && Objects.equals(id_roadmap, other.id_roadmap);
+		return Objects.equals(id, other.id);
 	}
 }

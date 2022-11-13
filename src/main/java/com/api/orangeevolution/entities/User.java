@@ -1,12 +1,17 @@
 package com.api.orangeevolution.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +28,18 @@ public class User implements Serializable {
 	private String password;
 	private String photo;
 	private String is_admin;
+	
+	@ManyToMany
+	@JoinTable(name = "tb_interests_users",
+			joinColumns = { @JoinColumn(name = "users_id") },
+			inverseJoinColumns = { @JoinColumn(name = "interest_id") })
+	private List<Interest> interests = new ArrayList<>();
+	
+	@ManyToMany
+	@JoinTable(name = "tb_roadmaps_users",
+			joinColumns = { @JoinColumn(name = "users_id") },
+			inverseJoinColumns = { @JoinColumn(name = "roadmap_id") })
+	private List<Roadmap> roadmaps = new ArrayList<>();
 	
 	public User() {}
 
@@ -82,6 +99,14 @@ public class User implements Serializable {
 
 	public void setIs_admin(String is_admin) {
 		this.is_admin = is_admin;
+	}
+
+	public List<Interest> getInterests() {
+		return interests;
+	}
+
+	public List<Roadmap> getRoadmaps() {
+		return roadmaps;
 	}
 
 	@Override

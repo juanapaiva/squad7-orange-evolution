@@ -1,13 +1,19 @@
 package com.api.orangeevolution.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_roadmaps")
@@ -22,8 +28,17 @@ public class Roadmap implements Serializable {
 	private String description;
 	private Integer duration;
 	private String creator;
-	
-	public Roadmap() {}
+
+	@JsonIgnore
+	@ManyToMany
+	private List<User> users = new ArrayList<>();
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "roadmap")
+	private List<Content> contents = new ArrayList<>();
+
+	public Roadmap() {
+	}
 
 	public Roadmap(Integer id, String title, String description, Integer duration, String creator) {
 		super();
@@ -72,6 +87,14 @@ public class Roadmap implements Serializable {
 
 	public void setCreator(String creator) {
 		this.creator = creator;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public List<Content> getContents() {
+		return contents;
 	}
 
 	@Override
