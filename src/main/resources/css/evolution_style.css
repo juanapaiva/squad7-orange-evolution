@@ -1,0 +1,164 @@
+@font-face{
+  font-family: "Metropolis";
+  src: url(../font/metropolis.regular.woff);
+}
+body {
+  background: #0F0F0F;
+}
+header {
+  background: #FEFEFE;
+}
+.bg-gradient-evolution {
+  background: linear-gradient(129.66deg, #FF87CA 1.04%, #C78AF0 36.98%, #65ABE3 68.75%, #00C19C 100%);
+  border-radius: 32px;
+}
+
+.bg-black-evolution {
+  background: #0F0F0F;
+  box-shadow: 3px 3px 4px rgba(15, 15, 15, 0.35);
+  border-radius: 32px;
+}
+
+.title-white {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  color: #FEFEFE;
+  
+}
+
+.heading-2 {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  color: #FEFEFE;
+  
+}
+
+.body-copy {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #FEFEFE;
+}
+
+.body-bold {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  text-decoration: none;
+  color: #0F0F0F;   
+}
+
+
+.subtitle-dark {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #0F0F0F;  
+}
+
+.small-copy {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  
+}
+
+.btn-evolution-text {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 19px */
+  
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  
+}
+
+.img-logo{
+  height: 64px;
+}
+
+
+.tag-dark {
+
+width: 42px;
+height: 30px;
+
+background: #0F0F0F;
+border-radius: 8px;
+font-family: 'Metropolis';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 120%;
+/* or 14px */
+
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: #E5E5E5;
+}
+
+.tag-white {
+
+  width: 42px;
+  height: 30px;
+  
+  background: #FEFEFE;
+  border-radius: 8px;
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 120%;
+  /* or 14px */
+  
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #343435;
+  }
+
+  .btn-evolution-outline-purple {
+    width: 151px;
+    height: 51px;
+    left: 20px;
+    top: 91px;
+    
+    /* Neutral Black */
+    
+    background: #0F0F0F;
+    /* Teal */
+    
+    border: 1px solid #C78AF0;
+    border-radius: 32px;
+
+    color: #C78AF0;
+    
+  }
+
+  .btn-evolution-teal {
+    width: 151px;
+    height: 51px;
+    left: 20px;
+    top: 20px;
+    
+    /* Teal */
+    
+    background: #00C19C;
+    border-radius: 32px;
+    
+  }
