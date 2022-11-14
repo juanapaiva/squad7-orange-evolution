@@ -15,4 +15,12 @@ public class LoginController {
 		mv.setViewName("login");
 		return mv;
 	}
+	
+	@GetMapping("/cadastro")
+	public ModelAndView signIn() {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("user", new User());
+		mv.setViewName("cadastro");
+		return mv;
+	}
 }
