@@ -35,7 +35,7 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView();
 		user.setIs_admin("N");
 		userRepository.save(user);
-		mv.setViewName("redirect:/dashboard_usuario");
+		mv.setViewName("redirect:/dashboard");
 		return mv;
 	}
 }
