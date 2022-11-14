@@ -36,16 +36,16 @@
       <div class="d-flex justify-content-center col-12 mt-4">
         <form class="d-flex flex-wrap justify-content-center col-6" method="POST" th:object="${user}" action="saveUser">
         	<div class="col-12 mb-3">
-            <label for="exampleInputPassword1" class="form-label">NOME COMPLETO</label>
-            <input type="name" class="form-control" id="exampleInputName1" th:field="*{name}">
+            <label for="exampleInputName1" class="form-label">NOME COMPLETO</label>
+            <input type="text" class="form-control" id="exampleInputName1" th:field="*{name}" name="name">
           </div>
           <div class="col-12 mb-3">
             <label for="exampleInputEmail1" class="form-label">E-MAIL</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="*{email}">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="*{email}" name="email">
           </div>
           <div class="col-12 mb-3">
             <label for="exampleInputPassword1" class="form-label">SENHA</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}">
+            <input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}" name="password">
           </div>
           <button type="submit" class="btn btn-primary">QUERO COMEÇAR</button>
         </form>
