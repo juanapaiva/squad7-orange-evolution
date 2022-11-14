@@ -2,8 +2,10 @@ package com.api.orangeevolution.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,6 +38,10 @@ public class Roadmap implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "roadmap")
 	private List<Content> contents = new ArrayList<>();
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "roadmap")
+	private Set<ContentStatus> status = new HashSet<>();
 
 	public Roadmap() {
 	}
@@ -95,6 +101,10 @@ public class Roadmap implements Serializable {
 
 	public List<Content> getContents() {
 		return contents;
+	}
+
+	public Set<ContentStatus> getStatus() {
+		return status;
 	}
 
 	@Override

@@ -1,7 +1,9 @@
 package com.api.orangeevolution.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.api.orangeevolution.entities.enums.ContentStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_contents")
@@ -28,17 +31,20 @@ public class Content implements Serializable {
 	private String type;
 	private String owner;
 	private String duration;
-	private Integer status;
 	private String link;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_roadmap")
 	private Roadmap roadmap;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy = "content")
+	private Set<ContentStatus> status = new HashSet<>();
+	
 	public Content() {}
 
-	public Content(Integer id, String category, String subject, String title, String type, String owner, String duration,
-			ContentStatus status, String link, Roadmap roadmap) {
+	public Content(Integer id, String category, String subject, String title, String type, 
+			String owner, String duration, String link, Roadmap roadmap) {
 		super();
 		this.id = id;
 		this.category = category;
@@ -47,7 +53,6 @@ public class Content implements Serializable {
 		this.type = type;
 		this.owner = owner;
 		this.duration = duration;
-		setContentStatus(status);
 		this.link = link;
 		this.roadmap = roadmap;
 	}
@@ -108,16 +113,6 @@ public class Content implements Serializable {
 		this.duration = duration;
 	}
 
-	public ContentStatus getStatus() {
-		return ContentStatus.valueOf(status);
-	}
-
-	public void setContentStatus(ContentStatus status) {
-		if (status != null) {
-			this.status = status.getId();
-		}
-	}
-
 	public String getLink() {
 		return link;
 	}
@@ -132,6 +127,10 @@ public class Content implements Serializable {
 
 	public void setRoadmap(Roadmap roadmap) {
 		this.roadmap = roadmap;
+	}
+
+	public Set<ContentStatus> getStatus() {
+		return status;
 	}
 
 	@Override

@@ -2,8 +2,10 @@ package com.api.orangeevolution.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -40,6 +43,9 @@ public class User implements Serializable {
 			joinColumns = { @JoinColumn(name = "users_id") },
 			inverseJoinColumns = { @JoinColumn(name = "roadmap_id") })
 	private List<Roadmap> roadmaps = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "user")
+	private Set<ContentStatus> status = new HashSet<>();
 	
 	public User() {}
 
@@ -107,6 +113,10 @@ public class User implements Serializable {
 
 	public List<Roadmap> getRoadmaps() {
 		return roadmaps;
+	}
+
+	public Set<ContentStatus> getStatus() {
+		return status;
 	}
 
 	@Override
