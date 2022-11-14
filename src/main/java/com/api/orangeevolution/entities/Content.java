@@ -33,6 +33,7 @@ public class Content implements Serializable {
 	private String duration;
 	private String link;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "id_roadmap")
 	private Roadmap roadmap;

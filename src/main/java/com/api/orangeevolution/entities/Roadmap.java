@@ -35,7 +35,6 @@ public class Roadmap implements Serializable {
 	@ManyToMany
 	private List<User> users = new ArrayList<>();
 
-	@JsonIgnore
 	@OneToMany(mappedBy = "roadmap")
 	private List<Content> contents = new ArrayList<>();
 	
