@@ -1,25 +1,67 @@
 <!doctype html>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5 subtitle-dark" id="exampleModalLabel">Você concluiu este conteúdo?</h1>
-          </div>
-          <div class="modal-body text-end">
+<html lang="pt-br">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content-black">
+      <div class="modal-header">
+        <p class="modal-title fs-5 subtitle-dark text-white" id="exampleModalLabel">Editar conteúdo</p>
+      </div>
+      <div class="modal-body">
+        <form class="d-flex flex-wrap">
+          <div class="col-12 mb-3">
+            <label for="exampleInputEmail1" class="pre-title text-white">Nome completo</label>
             <div>
-              <a type="button" class="btn-evolution-text text-dark" href="" data-bs-dismiss="modal">Ainda não.</a>
-            </div>
-            <div>
-              <a class="btn-evolution-text btn-evolution-text text-dark" href="">Sim, pode marcar!</a>
+              <input type="email" class="evolution-form" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
           </div>
-        </div>
+          <div class="col-12 mb-3">
+            <label for="exampleInputPassword1" class="pre-title text-white">Email</label>
+            <div>
+              <input type="password" class="evolution-form" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="exampleInputPassword1" class="pre-title text-white">Selecione a área de interesse</label>
+            <div>
+              <input type="password" class="evolution-form" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="exampleInputPassword1" class="pre-title text-white">Senha</label>
+            <div>
+              <input type="password" class="evolution-form" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="exampleInputPassword1" class="pre-title text-white">Confirmar senha</label>
+            <div>
+              <input type="password" class="evolution-form" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="exampleInputPassword1" class="pre-title text-white">Confirmar senha</label>
+            <div>
+              <input type="password" class="evolution-form" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="exampleInputPassword1" class="pre-title text-white">Confirmar senha</label>
+            <div>
+              <input type="password" class="evolution-form" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="col-12 mt-3">
+            <button type="submit" class="btn-evolution-outline-purple btn-evolution-text">Cancelar</button>
+          </div>
+          <div class="col-12 mt-3">
+            <button type="submit" class="btn-evolution-teal btn-evolution-text">Confirmar</button>
+          </div>
+        </form>
       </div>
     </div>
-  
-<html lang="pt-br">
+  </div>
+</div>
   <head>
 
     <title>Orange Evolution</title>
@@ -153,10 +195,10 @@
                               
           <div class="d-md-flex justify-content-end text-center mt-3">
             <div class="me-0 me-md-2">
-              <button type="button" class="btn-evolution-teal btn-evolution-text px-md-5">Editar</button>
+              <button type="button" class="btn-evolution-teal btn-evolution-text px-md-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
             </div>
             <div class="mt-3 mt-md-0">
-              <button type="button" class="btn-evolution-danger btn-evolution-text px-md-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button>
+              <button type="button" class="btn-evolution-danger btn-evolution-text px-md-5">Excluir</button>
             </div>
           </div>
           </div>
@@ -177,10 +219,10 @@
                               
             <div class="d-md-flex justify-content-end text-center mt-3">
               <div class="me-0 me-md-2">
-                <button type="button" class="btn-evolution-teal btn-evolution-text px-md-5">Editar</button>
+                <button type="button" class="btn-evolution-teal btn-evolution-text px-md-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
               </div>
               <div class="mt-3 mt-md-0">
-                <button type="button" class="btn-evolution-danger btn-evolution-text px-md-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button>
+                <button type="button" class="btn-evolution-danger btn-evolution-text px-md-5">Excluir</button>
               </div>
             </div>
             </div>
@@ -200,10 +242,10 @@
                                  
               <div class="d-md-flex justify-content-end text-center mt-3">
                 <div class="me-0 me-md-2">
-                  <button type="button" class="btn-evolution-teal btn-evolution-text px-md-5">Editar</button>
+                  <button type="button" class="btn-evolution-teal btn-evolution-text px-md-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
                 </div>
                 <div class="mt-3 mt-md-0">
-                  <button type="button" class="btn-evolution-danger btn-evolution-text px-md-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button>
+                  <button type="button" class="btn-evolution-danger btn-evolution-text px-md-5">Excluir</button>
                 </div>
               </div>
               </div>
