@@ -20,7 +20,7 @@ const getRoadmaps = async (urlItem) => {
 
 // Redirecionamento das trilhas
 function redirectButton(id) {
-	window.location.href = `http://localhost:8080/roadmaps/${id}`
+	window.location.href = `http://localhost:8080/trilha?=${id}`
 }
 
 const addItemIntoDashboard = async () => {
@@ -57,7 +57,7 @@ const addItemIntoDashboard = async () => {
 		  
 				<div>	
 					<div class="mt-3 mt-md-0">
-						<button type="button" class="btn-evolution-teal btn-evolution-text" data-bs-toggle="modal" data-bs-target="#exampleModal" value="${index+1}" onClick={redirectButton(${item.id})}>ACESSAR</button>
+						<button type="button" class="btn-evolution-teal btn-evolution-text" value="${index+1}" onclick={redirectButton(${item.id})}>ACESSAR</button>
 					</div>
 				</div>
 	 		</div>
