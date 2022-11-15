@@ -46,7 +46,6 @@ public class RoadmapService {
 	
 	public void updateData(Roadmap roadmap, Roadmap newRoadmap) {
 		roadmap.setTitle(newRoadmap.getTitle());
-		roadmap.setDescription(newRoadmap.getDescription());
 		roadmap.setDuration(newRoadmap.getDuration());
 		roadmap.setCreator(newRoadmap.getCreator());
 	}

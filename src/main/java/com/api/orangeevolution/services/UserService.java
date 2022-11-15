@@ -48,7 +48,6 @@ public class UserService {
 		user.setName(newUser.getName());
 		user.setEmail(newUser.getEmail());
 		user.setPassword(newUser.getPassword());
-		user.setPhoto(newUser.getPhoto());
 	}
 	
 	public void delete(Integer id) {

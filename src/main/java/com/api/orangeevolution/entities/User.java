@@ -2,8 +2,10 @@ package com.api.orangeevolution.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +14,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "tb_users")
@@ -24,9 +28,9 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
+	@Email
 	private String email;
 	private String password;
-	private String photo;
 	private String is_admin;
 	
 	@ManyToMany
@@ -41,15 +45,17 @@ public class User implements Serializable {
 			inverseJoinColumns = { @JoinColumn(name = "roadmap_id") })
 	private List<Roadmap> roadmaps = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "user")
+	private Set<ContentStatus> status = new HashSet<>();
+	
 	public User() {}
 
-	public User(Integer id, String name, String email, String password, String photo, String is_admin) {
+	public User(Integer id, String name, String email, String password, String is_admin) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.photo = photo;
 		this.is_admin = is_admin;
 	}
 
@@ -85,14 +91,6 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
 	public String getIs_admin() {
 		return is_admin;
 	}
@@ -107,6 +105,10 @@ public class User implements Serializable {
 
 	public List<Roadmap> getRoadmaps() {
 		return roadmaps;
+	}
+
+	public Set<ContentStatus> getStatus() {
+		return status;
 	}
 
 	@Override
@@ -125,6 +127,4 @@ public class User implements Serializable {
 		User other = (User) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
 }

@@ -2,8 +2,10 @@ package com.api.orangeevolution.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +27,6 @@ public class Roadmap implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String title;
-	private String description;
 	private Integer duration;
 	private String creator;
 
@@ -33,18 +34,20 @@ public class Roadmap implements Serializable {
 	@ManyToMany
 	private List<User> users = new ArrayList<>();
 
-	@JsonIgnore
 	@OneToMany(mappedBy = "roadmap")
 	private List<Content> contents = new ArrayList<>();
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "roadmap")
+	private Set<ContentStatus> status = new HashSet<>();
 
 	public Roadmap() {
 	}
 
-	public Roadmap(Integer id, String title, String description, Integer duration, String creator) {
+	public Roadmap(Integer id, String title, Integer duration, String creator) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.description = description;
 		this.duration = duration;
 		this.creator = creator;
 	}
@@ -63,14 +66,6 @@ public class Roadmap implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public Integer getDuration() {
@@ -95,6 +90,10 @@ public class Roadmap implements Serializable {
 
 	public List<Content> getContents() {
 		return contents;
+	}
+
+	public Set<ContentStatus> getStatus() {
+		return status;
 	}
 
 	@Override
