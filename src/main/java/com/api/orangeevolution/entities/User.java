@@ -31,7 +31,6 @@ public class User implements Serializable {
 	@Email
 	private String email;
 	private String password;
-	private String photo;
 	private String is_admin;
 	
 	@ManyToMany
@@ -51,13 +50,12 @@ public class User implements Serializable {
 	
 	public User() {}
 
-	public User(Integer id, String name, String email, String password, String photo, String is_admin) {
+	public User(Integer id, String name, String email, String password, String is_admin) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.photo = photo;
 		this.is_admin = is_admin;
 	}
 
@@ -91,14 +89,6 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
 	}
 
 	public String getIs_admin() {
@@ -137,6 +127,4 @@ public class User implements Serializable {
 		User other = (User) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
 }
