@@ -1,6 +1,6 @@
 @font-face{
   font-family: "Metropolis";
-  src: url(../font/metropolis.regular.woff);
+  src: url(../font/Metropolis-Regular.otf);
 }
 body {
   background: #0F0F0F;
@@ -24,9 +24,20 @@ header {
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
-  line-height: 120%;
   color: #FEFEFE;
   
+}
+
+.pre-title {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  /* or 14px */
+  
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
 }
 
 .heading-2 {
@@ -34,7 +45,6 @@ header {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
-  line-height: 120%;
   color: #FEFEFE;
   
 }
@@ -44,7 +54,6 @@ header {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 120%;
   color: #FEFEFE;
 }
 
@@ -53,7 +62,6 @@ header {
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  line-height: 120%;
   text-decoration: none;
   color: #0F0F0F;   
 }
@@ -64,7 +72,6 @@ header {
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
-  line-height: 120%;
   color: #0F0F0F;  
 }
 
@@ -76,12 +83,24 @@ header {
   
 }
 
-.btn-evolution-text {
+.link-evolution {
   font-family: 'Metropolis';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 120%;
+  /* or 19px */
+  
+  text-decoration-line: underline;
+  color: #65ABE3;
+}
+
+.btn-evolution-text {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
   /* or 19px */
   
   letter-spacing: 0.03em;
@@ -95,9 +114,9 @@ header {
 
 
 .tag-dark {
-
-width: 42px;
+width: 46px;
 height: 30px;
+padding-top: 6px;
 
 background: #0F0F0F;
 border-radius: 8px;
@@ -105,7 +124,6 @@ font-family: 'Metropolis';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;
-line-height: 120%;
 /* or 14px */
 
 letter-spacing: 0.03em;
@@ -114,9 +132,9 @@ color: #E5E5E5;
 }
 
 .tag-white {
-
-  width: 42px;
+  width: 46px;
   height: 30px;
+  padding-top: 6px;
   
   background: #FEFEFE;
   border-radius: 8px;
@@ -124,7 +142,6 @@ color: #E5E5E5;
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
-  line-height: 120%;
   /* or 14px */
   
   letter-spacing: 0.03em;
@@ -133,7 +150,7 @@ color: #E5E5E5;
   }
 
   .btn-evolution-outline-purple {
-    width: 151px;
+    width: 100%;
     height: 51px;
     left: 20px;
     top: 91px;
@@ -150,15 +167,88 @@ color: #E5E5E5;
     
   }
 
+  .btn-evolution-outline-purple:hover {
+    background: #C78AF0;
+    color: #0F0F0F;
+    
+  }
+
   .btn-evolution-teal {
-    width: 151px;
+    width: 100%;
     height: 51px;
-    left: 20px;
-    top: 20px;
     
     /* Teal */
     
     background: #00C19C;
+    border: 1px solid #00C19C;
+    border-radius: 32px;
+    
+  }
+
+  .btn-evolution-teal:hover {
+    background: #0F0F0F;
+    /* Teal */
+    
+    border: 1px solid #00C19C;
+    color: #00C19C;
+    
+  }
+
+  .btn-evolution-danger {
+    width: 100%;
+    height: 51px;
+    
+    /* Danger */
+    
+    background: #FF3232;
+    border: 1px solid #FF3232;
+    border-radius: 32px;
+    
+  }
+
+  .modal-content-teal {
+    width: 312px;
+    height: 216px;
+    margin: auto;
+    
+    /* Teal */
+    
+    background: #00C19C;
+    /* Drop shadow */
+    
+    box-shadow: 3px 3px 4px rgba(15, 15, 15, 0.35);
+    border-radius: 16px;
+    
+  }
+
+  .modal-content-black {
+    margin: auto;
+    
+    /* Teal */
+    
+    background: #0F0F0F;
+    /* Drop shadow */
+    
+    box-shadow: 3px 3px 4px rgba(15, 15, 15, 0.35);
+    border-radius: 16px;
+    
+  }
+
+  .modal-header {
+    border: none;
+  }
+
+  .text-teal {
+    color: #00C19C;
+  }
+
+  .evolution-form {
+    width: 100%;
+    height: 39px;
+    
+    /* Neutral White */
+    
+    border: 1px solid #FEFEFE;
     border-radius: 32px;
     
   }
