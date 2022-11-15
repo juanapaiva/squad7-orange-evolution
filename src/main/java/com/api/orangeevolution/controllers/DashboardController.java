@@ -13,4 +13,11 @@ public class DashboardController {
 		mv.setViewName("dashboard_usuario");
 		return mv;
 	}
+
+	@GetMapping("/dashboardAdm")
+	public ModelAndView dashboardAdm() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("dashboard_adm");
+		return mv;
+	}
 }
