@@ -18,6 +18,11 @@ const getRoadmaps = async (urlItem) => {
   }
 };
 
+// Redirecionamento das trilhas
+function redirectButton(id) {
+	window.location.href = `http://localhost:8080/roadmaps/${id}`
+}
+
 const addItemIntoDashboard = async () => {
 	const user = await getRoadmaps(urlUser);
   const roadmaps = await getRoadmaps(urlRoadmaps);
@@ -52,7 +57,7 @@ const addItemIntoDashboard = async () => {
 		  
   		<div class="d-md-flex justify-content-end text-end">	
 	        <div class="me-0 me-md-2">
-	          <button type="button" class="btn btn-dark" value="${index+1}">ACESSAR</button>
+	          <button type="button" class="btn btn-dark" value="${index+1}" onClick={redirectButton(${item.id})}>ACESSAR</button>
 	        </div>
 	  	</div>
 	 </div>
