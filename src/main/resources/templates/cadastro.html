@@ -55,39 +55,39 @@
       
       
       <div class="d-flex flex-wrap justify-content-center col-12 mt-4">
-        <form class="d-flex flex-wrap justify-content-center col-md-6">
+        <form class="d-flex flex-wrap justify-content-center col-md-6" method="POST" th:object="${user}" action="saveUser">
           <div class="col-12 mb-3">
-            <label for="exampleInputEmail1" class="pre-title text-white">Nome completo</label>
+            <label for="exampleInputName1" class="pre-title text-white">NOME COMPLETO</label>
             <div>
-              <input type="email" class="evolution-form" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" class="evolution-form" id="exampleInputName1" th:field="*{name}" name="name">
             </div>
           </div>
           <div class="col-12 mb-3">
-            <label for="exampleInputPassword1" class="pre-title text-white">Email</label>
+            <label for="exampleInputEmail1" class="pre-title text-white">EMAIL</label>
             <div>
-              <input type="password" class="evolution-form" id="exampleInputPassword1">
+              <input type="email" class="evolution-form" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="*{email}" name="email">
             </div>
           </div>
           <div class="col-12 mb-3">
-            <label for="exampleInputPassword1" class="pre-title text-white">Selecione a área de interesse</label>
+            <label for="exampleInputInteresses1" class="pre-title text-white">SELECIONE SUAS ÁREAS DE INTERESSE</label>
             <div>
-              <input type="password" class="evolution-form" id="exampleInputPassword1">
+              <input type="text" class="evolution-form" id="exampleInputInteresses1">
             </div>
           </div>
           <div class="col-12 mb-3">
-            <label for="exampleInputPassword1" class="pre-title text-white">Senha</label>
+            <label for="exampleInputPassword1" class="pre-title text-white">SENHA</label>
             <div>
-              <input type="password" class="evolution-form" id="exampleInputPassword1">
+              <input type="password" class="evolution-form" id="exampleInputPassword1" th:field="*{password}" name="password1">
             </div>
           </div>
           <div class="col-12 mb-3">
-            <label for="exampleInputPassword1" class="pre-title text-white">Confirmar senha</label>
+            <label for="exampleInputPassword2" class="pre-title text-white">CONFIRMAR SENHA</label>
             <div>
-              <input type="password" class="evolution-form" id="exampleInputPassword1">
+              <input type="password" class="evolution-form" id="exampleInputPassword2" name="password2">
             </div>
           </div>
           <div class="col-12 mt-3">
-            <button type="submit" class="btn-evolution-teal btn-evolution-text">Quero confirmar</button>
+            <button type="submit" class="btn-evolution-teal btn-evolution-text">QUERO COMEÇAR</button>
           </div>
         </form>
         <div class="col-12 text-center mt-5">

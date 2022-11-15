@@ -27,40 +27,40 @@ const addItemIntoDashboard = async () => {
 	const user = await getRoadmaps(urlUser);
   const roadmaps = await getRoadmaps(urlRoadmaps);
 
-	const userNameTemplate = `<p class="h1">Bem-vinde ao Orange Evolution, ${user.name}</p>`;
+	const userNameTemplate = `<p class="title-white">Boas vindas ao Orange Evolution, ${user.name}!</p>`;
   userName.innerHTML += userNameTemplate;
 
 	const userProfileTemplate = `              
-		<p class="h3">${user.name}</p>
-		<p class="h5">${user.email}</p>
+		<p class="subtitle-dark">${user.name}</p>
+		<p class="body-copy text-dark">${user.email}</p>
   `;
   userProfile.innerHTML += userProfileTemplate;
 
 	const userInterestsTemplate = user.interests.map((item) => `
 		<div class="me-2">
-			<p>${item.stack}</p>
+			<p class="tag-dark">${item.stack}</p>
 		</div>
   `).join("");
   userInterests.innerHTML += userInterestsTemplate;
 
   const roadmapTemplate = roadmaps.map((item, index) => `              
-      <div class="border p-4 mt-2">
-  	  	<div class="d-flex align-items-center justify-content-center col-12">
+      <div class="col-12 col-md-3  bg-black-evolution p-4 mt-2">
+  	  	<div class="d-flex align-items-center justify-content-center">
 	        <div>
 	          <img src="images/roadmap_image_${index+1}.svg" alt="Imagem da trilha">
 	        </div>
-  		</div>
+  			</div>
 		  
-  		<div>		
-    		<p class="h5">${item.title}</p>
-  		</div>
+				<div class="mt-3">		
+					<p class="subtitle-dark text-white">${item.title}</p>
+				</div>
 		  
-  		<div class="d-md-flex justify-content-end text-end">	
-	        <div class="me-0 me-md-2">
-	          <button type="button" class="btn btn-dark" value="${index+1}" onClick={redirectButton(${item.id})}>ACESSAR</button>
-	        </div>
-	  	</div>
-	 </div>
+				<div>	
+					<div class="mt-3 mt-md-0">
+						<button type="button" class="btn-evolution-teal btn-evolution-text" data-bs-toggle="modal" data-bs-target="#exampleModal" value="${index+1}" onClick={redirectButton(${item.id})}>ACESSAR</button>
+					</div>
+				</div>
+	 		</div>
   `).join("");
   divRoadmap.innerHTML += roadmapTemplate;
 };
