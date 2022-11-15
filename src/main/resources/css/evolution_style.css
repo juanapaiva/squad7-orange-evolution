@@ -28,6 +28,18 @@ header {
   
 }
 
+.pre-title {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  /* or 14px */
+  
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+}
+
 .heading-2 {
   font-family: 'Metropolis';
   font-style: normal;
@@ -69,6 +81,18 @@ header {
   font-weight: 400;
   font-size: 14px;
   
+}
+
+.link-evolution {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 19px */
+  
+  text-decoration-line: underline;
+  color: #65ABE3;
 }
 
 .btn-evolution-text {
@@ -170,6 +194,18 @@ color: #E5E5E5;
     
   }
 
+  .btn-evolution-danger {
+    width: 100%;
+    height: 51px;
+    
+    /* Danger */
+    
+    background: #FF3232;
+    border: 1px solid #FF3232;
+    border-radius: 32px;
+    
+  }
+
   .modal-content {
     width: 312px;
     height: 216px;
@@ -187,4 +223,19 @@ color: #E5E5E5;
 
   .modal-header {
     border: none;
+  }
+
+  .text-teal {
+    color: #00C19C;
+  }
+
+  .evolution-form {
+    width: 100%;
+    height: 39px;
+    
+    /* Neutral White */
+    
+    border: 1px solid #FEFEFE;
+    border-radius: 32px;
+    
   }
