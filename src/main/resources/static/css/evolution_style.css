@@ -105,6 +105,7 @@ header {
   
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  color: #0F0F0F;
   
 }
 
@@ -114,9 +115,12 @@ header {
 
 
 .tag-dark {
-width: 46px;
+width: auto;
 height: 30px;
 padding-top: 6px;
+padding-left: 5px;
+padding-right: 5px;
+
 
 background: #0F0F0F;
 border-radius: 8px;
@@ -132,9 +136,11 @@ color: #E5E5E5;
 }
 
 .tag-white {
-  width: 46px;
+  width: auto;
   height: 30px;
   padding-top: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
   
   background: #FEFEFE;
   border-radius: 8px;

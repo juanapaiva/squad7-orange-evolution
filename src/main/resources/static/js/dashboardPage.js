@@ -44,18 +44,18 @@ const addItemIntoDashboard = async () => {
   userInterests.innerHTML += userInterestsTemplate;
 
   const roadmapTemplate = roadmaps.map((item, index) => `              
-      <div class="col-12 col-md-3  bg-black-evolution p-4 mt-2">
-  	  	<div class="d-flex align-items-center justify-content-center">
+      <div class="d-flex flex-wrap col-12 col-md-3 bg-black-evolution p-4 mt-2">
+  	  	<div class="col-12">
 	        <div>
-	          <img src="images/roadmap_image_${index+1}.svg" alt="Imagem da trilha">
+	          <img class="img-fluid" src="images/roadmap_image_${index+1}.svg" alt="Imagem da trilha">
 	        </div>
   			</div>
 		  
-				<div class="mt-3">		
-					<p class="subtitle-dark text-white">${item.title}</p>
+				<div class="col-12 mt-3">		
+					<p class="text-break subtitle-dark text-white">${item.title}</p>
 				</div>
 		  
-				<div>	
+				<div class="col-12 align-self-end">	
 					<div class="mt-3 mt-md-0">
 						<button type="button" class="btn-evolution-teal btn-evolution-text" value="${index+1}" onclick={redirectButton(${item.id})}>ACESSAR</button>
 					</div>

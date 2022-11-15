@@ -20,25 +20,6 @@
               <img  class="img-logo" src="../images/logo.svg" alt="Orange Evolution Logo">
           </div>
 
-          <div class="d-flex flex-wrap">
-            <div class="d-flex me-3 btn-evolution-text">
-              <div>
-                <img src="../images/dashboard-icon.svg" alt="">
-              </div>
-              <div class="ms-2 d-none d-md-block">
-                <p>Dashboard</p>
-              </div>
-            </div>
-            <div class="d-flex me-3 btn-evolution-text">
-              <div>
-                <img src="../images/log-out-icon.svg" alt="">
-              </div>
-              <div class="ms-2 d-none d-md-block">
-                <p>Sair</p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </header>
@@ -71,7 +52,12 @@
           <div class="col-12 mb-3">
             <label for="exampleInputInteresses1" class="pre-title text-white">SELECIONE SUAS ÁREAS DE INTERESSE</label>
             <div>
-              <input type="text" class="evolution-form" id="exampleInputInteresses1">
+              <select class="evolution-form" aria-label="Default select example">
+                <option selected>Selecione</option>
+                <option value="1">UX/UI Design</option>
+                <option value="2">Desenvolvimento Full Stack</option>
+                <option value="3">Quality Assurance</option>
+              </select>
             </div>
           </div>
           <div class="col-12 mb-3">
@@ -91,7 +77,7 @@
           </div>
         </form>
         <div class="col-12 text-center mt-5">
-          <p class="body-copy">Já tem uma conta? <a class="link-evolution" href="#">Faça login</a></p>
+          <p class="body-copy">Já tem uma conta? <a class="link-evolution" href="/">Faça login</a></p>
         </div>
       </div>
            
