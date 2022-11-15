@@ -206,7 +206,7 @@ color: #E5E5E5;
     
   }
 
-  .modal-content {
+  .modal-content-teal {
     width: 312px;
     height: 216px;
     margin: auto;
@@ -214,6 +214,19 @@ color: #E5E5E5;
     /* Teal */
     
     background: #00C19C;
+    /* Drop shadow */
+    
+    box-shadow: 3px 3px 4px rgba(15, 15, 15, 0.35);
+    border-radius: 16px;
+    
+  }
+
+  .modal-content-black {
+    margin: auto;
+    
+    /* Teal */
+    
+    background: #0F0F0F;
     /* Drop shadow */
     
     box-shadow: 3px 3px 4px rgba(15, 15, 15, 0.35);
