@@ -1,25 +1,44 @@
-let roadmap = [];
-
-const divRoadmap = document.querySelector('.divDashboard');
-
+const urlUser = 'http://localhost:8080/users/4'; // retornar o id do user após login
 const urlRoadmaps = 'http://localhost:8080/roadmaps';
 
-const getRoadmaps = async () => {
+const userName = document.querySelector('.userName');
+const userProfile = document.querySelector('.userProfile');
+const userInterests = document.querySelector('.userInterests');
+const divRoadmap = document.querySelector('.divDashboard');
+
+let user = [];
+let roadmap = [];
+
+const getRoadmaps = async (urlItem) => {
   try {
-    const response = await fetch(urlRoadmaps);
+    const response = await fetch(urlItem);
     return response.json();
   } catch (error) {
     return response;
   }
 };
 
-//getRoadmaps();
-
 const addItemIntoDashboard = async () => {
-  const items = await getRoadmaps();
+	const user = await getRoadmaps(urlUser);
+  const roadmaps = await getRoadmaps(urlRoadmaps);
 
-  console.log({items})
-  const itemTemplate = items.map((item, index) => `              
+	const userNameTemplate = `<p class="h1">Bem-vinde ao Orange Evolution, ${user.name}</p>`;
+  userName.innerHTML += userNameTemplate;
+
+	const userProfileTemplate = `              
+		<p class="h3">${user.name}</p>
+		<p class="h5">${user.email}</p>
+  `;
+  userProfile.innerHTML += userProfileTemplate;
+
+	const userInterestsTemplate = user.interests.map((item) => `
+		<div class="me-2">
+			<p>${item.stack}</p>
+		</div>
+  `).join("");
+  userInterests.innerHTML += userInterestsTemplate;
+
+  const roadmapTemplate = roadmaps.map((item, index) => `              
       <div class="border p-4 mt-2">
   	  	<div class="d-flex align-items-center justify-content-center col-12">
 	        <div>
@@ -38,10 +57,7 @@ const addItemIntoDashboard = async () => {
 	  	</div>
 	 </div>
   `).join("");
-  
-  console.log(itemTemplate)
-
-  divRoadmap.innerHTML += itemTemplate;
+  divRoadmap.innerHTML += roadmapTemplate;
 };
 
 addItemIntoDashboard();
