@@ -1,11 +1,11 @@
 let roadmapId = (window.location.search).charAt(2)
 
 const urlRoadmap = `http://localhost:8080/roadmaps/${roadmapId}`;
-const urlContent = 'http://localhost:8080/contents';
 
 const roadmapDescription = document.querySelector('.roadmapDescription');
+const contentCategories = document.querySelector('.contentCategories');
 
-let content = [];
+let categories = []
 
 const getRoadmap = async (urlItem) => {
   try {
@@ -25,6 +25,23 @@ const addItemIntoRoadmap = async () => {
 			<p class="body-copy">Trilha montada por: ${roadmap.creator}</p>
   `;
   roadmapDescription.innerHTML += roadmapDescriptionTemplate;
+
+  roadmap.contents.forEach(item => {
+    categories.push(`${item.category}`);
+  });
+  categories = [...new Set(categories)]
+
+  const contentCategoriesTemplate = categories.map((item) => `
+    <div class="d-flex align-items-center justify-content-between col-12">
+      <div>
+        <a class="body-bold">${item}</a>
+      </div>          
+      <div>
+        <img src="../images/check-off.svg" alt="">
+      </div>
+    </div>
+  `).join("");
+  contentCategories.innerHTML += contentCategoriesTemplate;
 };
 
 addItemIntoRoadmap();
