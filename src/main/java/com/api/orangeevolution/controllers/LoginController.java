@@ -1,7 +1,11 @@
 package com.api.orangeevolution.controllers;
 
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,7 +20,7 @@ public class LoginController {
 	private UserRepository userRepository;
 
 	@GetMapping("/")
-	public ModelAndView login() {
+	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("login");
 		return mv;
@@ -31,11 +35,19 @@ public class LoginController {
 	}
 	
 	@PostMapping("saveUser")
-	public ModelAndView signIn(User user) {
+	public ModelAndView signIn(@Valid User user, BindingResult br) {
 		ModelAndView mv = new ModelAndView();
+		if (br.hasErrors()) {
+			mv.setViewName("cadastro");
+		}
 		user.setIs_admin("N");
 		userRepository.save(user);
 		mv.setViewName("redirect:/");
+		return mv;
+	}
+
+	public ModelAndView login(User user, BindingResult br, HttpSession session)  {
+		ModelAndView mv = new ModelAndView();
 		return mv;
 	}
 }

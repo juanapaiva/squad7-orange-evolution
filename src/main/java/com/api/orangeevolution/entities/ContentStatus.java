@@ -43,6 +43,14 @@ public class ContentStatus {
 		this.status_id = status_id;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public User getUser() {
 		return user;
 	}

@@ -1,6 +1,6 @@
 let roadmapId = (window.location.search).charAt(2)
 
-const urlRoadmap = `http://localhost:8080/roadmaps/${roadmapId}`;
+const urlRoadmap = `http://localhost:8080/roadmaps/1`; //${roadmapId}
 
 const roadmapDescription = document.querySelector('.roadmapDescription');
 const contentCategories = document.querySelector('.contentCategories');
