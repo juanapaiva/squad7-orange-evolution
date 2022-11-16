@@ -25,13 +25,13 @@ public class ContentStatusResource {
 	@Autowired
 	private ContentStatusService service;
 
-	/*
-	 * @PostMapping public ResponseEntity<ContentStatus> insert(@RequestBody
-	 * ContentStatus contentStatus) { contentStatus = service.create(contentStatus);
-	 * URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-	 * .buildAndExpand(contentStatus.getId()).toUri(); return
-	 * ResponseEntity.created(uri).body(contentStatus); }
-	 */
+	@PostMapping public ResponseEntity<ContentStatus> insert(@RequestBody
+	ContentStatus contentStatus) { 
+		contentStatus = service.create(contentStatus);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+				.buildAndExpand(contentStatus.getId()).toUri(); 
+		return ResponseEntity.created(uri).body(contentStatus); 
+	}
 	
 	@GetMapping
 	public ResponseEntity<List<ContentStatus>> findAll() {
@@ -51,9 +51,9 @@ public class ContentStatusResource {
 		return ResponseEntity.ok().body(contentStatus);
 	}
 	
-	/*
-	 * @DeleteMapping(value = "/{id}") public ResponseEntity<Void>
-	 * delete(@PathVariable Integer id) { service.delete(id); return
-	 * ResponseEntity.noContent().build(); }
-	 */
+	@DeleteMapping(value = "/{id}") public ResponseEntity<Void>
+	delete(@PathVariable Integer id) { 
+		service.delete(id); 
+		return ResponseEntity.noContent().build(); 
+	}
 }

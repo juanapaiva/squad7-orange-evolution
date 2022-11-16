@@ -21,10 +21,8 @@ public class ContentStatusService {
 	@Autowired
 	private ContentStatusRepository repo;
 	
-	/*
-	 * public ContentStatus create(ContentStatus contentStatus) { return
-	 * repo.save(contentStatus); }
-	 */
+	public ContentStatus create(ContentStatus contentStatus) { return
+	repo.save(contentStatus); }
 
 	public List<ContentStatus> readAll() {
 		return repo.findAll();
@@ -49,10 +47,13 @@ public class ContentStatusService {
 		contentStatus.setContentStatus(newContentStatus.getStatus());
 	}
 	
-	/*
-	 * public void delete(Integer id) { try { repo.deleteById(id); } catch
-	 * (EmptyResultDataAccessException e) { throw new ResourceNotFoundException(id);
-	 * } catch (DataIntegrityViolationException e) { throw new
-	 * DatabaseException(e.getMessage()); } }
-	 */
+	public void delete(Integer id) { 
+		try { 
+			repo.deleteById(id); 
+		} catch (EmptyResultDataAccessException e) { 
+			throw new ResourceNotFoundException(id);
+		} catch (DataIntegrityViolationException e) { 
+			throw new DatabaseException(e.getMessage()); 
+		} 
+	}
 }

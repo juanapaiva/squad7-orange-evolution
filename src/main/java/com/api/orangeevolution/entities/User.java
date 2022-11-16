@@ -17,8 +17,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_users")
@@ -29,14 +27,9 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Size(min = 4, max = 100, message = "O nome deve conter entre 4 e 100 caracteres")
-	@NotBlank(message = "O nome é obrigarório.")
 	private String name;
 	@Email
-	@Size(min = 8, max = 70, message = "O nome deve conter entre 8 e 70 caracteres")
-	@NotBlank(message = "O email é obrigarório.")
 	private String email;
-	@NotBlank(message = "A senha é obrigarória.")
 	private String password;
 	private String is_admin;
 	
