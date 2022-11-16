@@ -34,7 +34,7 @@ const addItemIntoDashboard = async () => {
 					<button type="button" class="btn-evolution-teal btn-evolution-text px-md-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Novo Conteudo</button>
 				</div>
 				<div class="col-12 mt-3">
-					<a href="trilhas_adm.html">
+					<a href="trilhaAdm">
 						<button type="button" class="btn-evolution-outline-purple btn-evolution-text px-md-5" value="${index+1}" onclick={redirectButton(${item.id})}>Editar</button>
 					</a>
 				</div>

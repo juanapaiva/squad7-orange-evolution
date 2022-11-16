@@ -28,4 +28,11 @@ public class ContentController {
 		contentRepository.save(content);
 		return mv;
 	}
+
+	@GetMapping("/trilhaAdm")
+	public ModelAndView roadmapAdm() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("trilhas_adm");
+		return mv;
+	}
 }
